@@ -36,5 +36,9 @@ public class OrderController {
         orderService.delete(id);
         return HttpStatus.OK;
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<Order> readById(@PathVariable Integer id) {
+        return ResponseEntity.ok(orderService.readById(id.longValue()));
 
+    }
 }
