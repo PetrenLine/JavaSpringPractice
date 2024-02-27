@@ -12,15 +12,17 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        
     </properties>
 
     <dependencies>
-    <!-- Spring Boot Starter Web -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-        <version>2.7.18</version>
-    </dependency>
+        <!-- Spring Boot Starter Web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.7.18</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -30,10 +32,10 @@
 
         <!-- Spring Boot Starter Data JPA -->
         <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-data-jpa</artifactId>
-        <version>2.7.18</version>
-    </dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>2.7.18</version>
+        </dependency>
 
         <!--  postgresql  -->
         <dependency>
@@ -42,12 +44,12 @@
             <version>42.7.1</version>
         </dependency>
         <!--  lombok -->
-          <dependency>
-              <groupId>org.projectlombok</groupId>
-              <artifactId>lombok</artifactId>
-              <version>1.18.30</version>
-              <scope>provided</scope>
-          </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -66,12 +68,12 @@
             <artifactId>javax.persistence-api</artifactId>
             <version>2.2</version>
         </dependency>
-          <!-- Hibernate Validator -->
-    <dependency>
-        <groupId>org.hibernate.validator</groupId>
-        <artifactId>hibernate-validator</artifactId>
-        <version>7.0.5.Final</version>
-    </dependency>
+        <!-- Hibernate Validator -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>7.0.5.Final</version>
+        </dependency>
 
         <!-- Swagger Dependencies -->
         <dependency>
@@ -84,6 +86,13 @@
             <artifactId>validation-api</artifactId>
             <version>2.0.1.Final</version> <!-- or any other appropriate version -->
         </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
 
     </dependencies>
 </project>
