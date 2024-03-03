@@ -1,6 +1,6 @@
 package org.example.service;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.example.dto.OrderDetailDTO;
 import org.example.entity.OrderDetail;
 import org.example.repository.OrderDetailRepository;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class OrderDetailService {
     private final OrderDetailRepository orderDetailRepository;
     private final OrderRepository orderRepository;

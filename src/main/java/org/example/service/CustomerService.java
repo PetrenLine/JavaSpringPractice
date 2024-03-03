@@ -1,13 +1,14 @@
 package org.example.service;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.example.dto.CustomerDTO;
 import org.example.entity.Customer;
 import org.example.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
+
 
 
 public class CustomerService {
