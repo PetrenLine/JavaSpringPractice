@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ShoppingCart
+    username: postgres
+    password: 12345678
+
+server:
+  port: 8081
