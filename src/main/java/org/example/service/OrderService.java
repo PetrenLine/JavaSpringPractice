@@ -2,7 +2,9 @@ package org.example.service;
 
 import lombok.RequiredArgsConstructor;
 import org.example.dto.OrderDTO;
+import org.example.entity.Customer;
 import org.example.entity.Order;
+import org.example.mapper.OrderMapper;
 import org.example.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,13 +17,10 @@ public class OrderService {
     private final CustomerService customerService;
 
     public Order create(OrderDTO dto) {
-        return orderRepository.save(Order.builder()
-                .orderDate(dto.getOrderDate())
-                .orderStatus(dto.getOrderStatus())
-                .paymentMethod(dto.getPaymentMethod())
-                .customer(customerService.readById(dto.getCustomerId()))
-                .build());
-
+        Order order = OrderMapper.INSTANCE.orderDTOToOrder(dto);
+        Customer customer = customerService.readById(dto.getCustomerId());
+        order.setCustomer(customer);
+        return orderRepository.save(order);
     }
 
     public List<Order> readAll() {

@@ -3,6 +3,7 @@ package org.example.service;
 import lombok.RequiredArgsConstructor;
 import org.example.dto.ProductDTO;
 import org.example.entity.Product;
+import org.example.mapper.ProductMapper;
 import org.example.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
@@ -14,12 +15,8 @@ public class ProductService {
     private final ProductRepository productRepository;
 
     public Product create(ProductDTO dto) {
-        return productRepository.save(Product.builder()
-                .name(dto.getName())
-                .price(dto.getPrice())
-                .description(dto.getDescription())
-                .inStock(dto.getInStock())
-                .build());
+        Product product = ProductMapper.INSTANCE.productDTOToProduct(dto);
+        return productRepository.save(product);
     }
 
     public List<Product> readAll() {

@@ -2,7 +2,10 @@ package org.example.service;
 
 import lombok.RequiredArgsConstructor;
 import org.example.dto.OrderDetailDTO;
+import org.example.entity.Order;
 import org.example.entity.OrderDetail;
+import org.example.entity.Product;
+import org.example.mapper.OrderDetailMapper;
 import org.example.repository.OrderDetailRepository;
 import org.example.repository.OrderRepository;
 import org.springframework.stereotype.Service;
@@ -18,13 +21,12 @@ public class OrderDetailService {
     private final ProductService productService;
 
     public OrderDetail create(OrderDetailDTO dto) {
-        return orderDetailRepository.save(OrderDetail.builder()
-                .order(orderService.readById(dto.getOrderId()))
-                .product(productService.readById(dto.getProductId()))
-                .price(dto.getPrice())
-                .quantity(dto.getQuantity())
-                .build());
-
+        OrderDetail orderDetail = OrderDetailMapper.INSTANCE.orderDetailDTOToOrderDetail(dto);
+        Order order = orderService.readById(dto.getOrderId());
+        Product product = productService.readById(dto.getProductId());
+        orderDetail.setOrder(order);
+        orderDetail.setProduct(product);
+        return orderDetailRepository.save(orderDetail);
     }
 
     public List<OrderDetail> readAll() {
