@@ -15,7 +15,7 @@ public interface CustomerMapper {
     Customer customerDTOToCustomer(CustomerDTO dto);
 
     @Mapping(source = "name", target = "name")
-    @Mapping(source = "address", target = "address")
+    @Mapping(source = "addres", target = "addres")
     @Mapping(source = "email", target = "email")
     @Mapping(source = "phone", target = "phone")
     CustomerDTO customerToCustomerDTO(Customer customer);
